@@ -44,6 +44,9 @@ class AddProductViewController: UIViewController {
             print("Failed to save product: \(error)")
         }
     }
+    @IBAction func cancelView(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
     
 }

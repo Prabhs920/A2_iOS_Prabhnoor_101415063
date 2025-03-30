@@ -48,16 +48,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
             label?.layer.borderColor = UIColor.systemGray4.cgColor
             label?.layer.borderWidth = 1.2
         }
-        
-        [prevButton, nextButton].forEach { button in
-            button?.layer.cornerRadius = 12
-            button?.setTitleColor(.white, for: .normal)
-            button?.backgroundColor = UIColor.systemBlue
-            button?.layer.shadowColor = UIColor.black.cgColor
-            button?.layer.shadowOpacity = 0.3
-            button?.layer.shadowRadius = 4
-            button?.layer.shadowOffset = CGSize(width: 0, height: 3)
-        }
+         
     }
     
     func fetchProducts() {
