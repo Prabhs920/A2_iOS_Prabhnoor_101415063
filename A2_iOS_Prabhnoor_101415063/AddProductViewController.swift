@@ -45,7 +45,5 @@ class AddProductViewController: UIViewController {
         }
     }
 
-    @IBAction func cancelView(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+    
 }
