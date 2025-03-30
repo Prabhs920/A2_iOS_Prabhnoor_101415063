@@ -69,7 +69,27 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
 
-    
+    func updateView() {
+        guard !products.isEmpty else { return }
+        let product = products[currentIndex]
+        nameLabel.text = product.name
+        idLabel.text = product.id?.uuidString
+        descriptionLabel.text = product.desc
+        priceLabel.text = String(format: "$%.2f", product.price)
+        providerLabel.text = product.provider
+        
+        prevButton.isEnabled = currentIndex > 0
+        nextButton.isEnabled = currentIndex < products.count - 1
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            fetchProducts()
+        } else {
+            filterProducts(keyword: searchText)
+        }
+        currentIndex = 0
+        updateView()
+    }
    
     func filterProducts(keyword: String) {
         let request: NSFetchRequest<Product> = Product.fetchRequest()
