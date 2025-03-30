@@ -11,42 +11,7 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
-    func createSampleData() {
-        let context = persistentContainer.viewContext
-        let request: NSFetchRequest<Product> = Product.fetchRequest()
-        
-        do {
-            let count = try context.count(for: request)
-            if count == 0 {
-                let sampleData: [(String, String, Double, String)] = [
-                    ("Apple iPhone 15", "Latest iPhone with A16 chip", 999.99, "Apple Inc."),
-                    ("Samsung Galaxy S24", "Flagship Android phone", 899.99, "Samsung"),
-                    ("Google Pixel 8", "Clean Android experience", 799.00, "Google"),
-                    ("Sony WH-1000XM5", "Noise-canceling headphones", 379.99, "Sony"),
-                    ("Dell XPS 13", "Compact Windows laptop", 1199.99, "Dell"),
-                    ("Logitech MX Master 3", "Ergonomic mouse", 99.99, "Logitech"),
-                    ("Canon EOS R50", "Mirrorless camera for creators", 679.00, "Canon"),
-                    ("Amazon Echo Dot", "Smart speaker with Alexa", 49.99, "Amazon"),
-                    ("Apple Watch Series 9", "Smartwatch with fitness tracking", 429.00, "Apple Inc."),
-                    ("Nintendo Switch OLED", "Hybrid gaming console", 349.99, "Nintendo")
-                ]
-                
-                for (name, desc, price, provider) in sampleData {
-                    let product = Product(context: context)
-                    product.id = UUID()
-                    product.name = name
-                    product.desc = desc
-                    product.price = price
-                    product.provider = provider
-                }
-                
-                try context.save()
-            }
-        } catch {
-            print("Error while adding sample products: \(error)")
-        }
-    }
+   
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
