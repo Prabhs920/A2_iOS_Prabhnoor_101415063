@@ -17,10 +17,7 @@ class AddProductViewController: UIViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+   
     @IBAction func addProduct(_ sender: UIButton) {
         guard let name = nameField.text, !name.isEmpty,
               let desc = descField.text, !desc.isEmpty,
