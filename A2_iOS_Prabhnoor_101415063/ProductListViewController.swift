@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ProductListViewController: UIViewController, UITableViewDataSource {
+class ProductListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
