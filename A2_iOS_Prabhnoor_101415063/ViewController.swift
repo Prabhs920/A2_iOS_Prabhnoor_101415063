@@ -36,6 +36,29 @@ class ViewController: UIViewController, UISearchBarDelegate {
         view.addGestureRecognizer(swipeRight)
     }
     
+    func setupUI() {
+        view.backgroundColor = UIColor.systemGray6
+        
+        [nameLabel, idLabel, descriptionLabel, priceLabel, providerLabel].forEach { label in
+            label?.layer.cornerRadius = 10
+            label?.layer.masksToBounds = true
+            label?.backgroundColor = UIColor.white
+            label?.textColor = UIColor.darkGray
+            label?.textAlignment = .center
+            label?.layer.borderColor = UIColor.systemGray4.cgColor
+            label?.layer.borderWidth = 1.2
+        }
+        
+        [prevButton, nextButton].forEach { button in
+            button?.layer.cornerRadius = 12
+            button?.setTitleColor(.white, for: .normal)
+            button?.backgroundColor = UIColor.systemBlue
+            button?.layer.shadowColor = UIColor.black.cgColor
+            button?.layer.shadowOpacity = 0.3
+            button?.layer.shadowRadius = 4
+            button?.layer.shadowOffset = CGSize(width: 0, height: 3)
+        }
+    }
     
     func fetchProducts() {
         let request: NSFetchRequest<Product> = Product.fetchRequest()

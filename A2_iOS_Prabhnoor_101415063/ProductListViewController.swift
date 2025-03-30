@@ -34,15 +34,4 @@ class ProductListViewController: UIViewController, UITableViewDataSource, UITabl
 
     // MARK: - TableView Data Source
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
-        let product = products[indexPath.row]
-        cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = product.desc
-        return cell
-    }
 }
